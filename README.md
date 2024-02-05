@@ -10,7 +10,7 @@ Amazon Music Clone built using flutter.
 
 • Podcasts 
 
-• Recommendations based on Genrem, Activities, etc.
+• Recommendations based on Genres, Activities, etc.
 
 • Login
 
