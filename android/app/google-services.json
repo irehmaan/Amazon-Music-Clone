@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "274906387857",
+    "project_id": "amazonmusic",
+    "storage_bucket": "amazonmusic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274906387857:android:f9560805a258df70a6b630",
+        "android_client_info": {
+          "package_name": "com.example.amazonmusiclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274906387857-li9r9ms3u0ubmdqo5kkjghm4vquocbg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQX6ciXuMwLyefKdd9DtMWDbVZbcb8P6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274906387857-li9r9ms3u0ubmdqo5kkjghm4vquocbg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
