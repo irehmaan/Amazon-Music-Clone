@@ -12,9 +12,13 @@ Amazon Music Clone built using flutter.
 # What's under the hood
 The clone is developed while implementing various patterns and good practices such as:
 -> State Management via Provider.
+
 -> JSON API.
+
 -> Network calls ( get , post).
+
 -> Singleton via GetIt.
+
 -> Clean Architecture.
 -> OAuth via Firebase.
 
