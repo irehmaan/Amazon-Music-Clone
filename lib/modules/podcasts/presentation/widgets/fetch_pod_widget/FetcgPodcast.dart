@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 import 'package:webfeed_revised/webfeed_revised.dart';
 
-class FetcgPodcast extends StatelessWidget {
+class FetchPodcast extends StatelessWidget {
   final String feedUrl;
-  FetcgPodcast({super.key, required this.feedUrl});
+  FetchPodcast({super.key, required this.feedUrl});
 
   final FetchRssFeed _fetchRssFeed = FetchRssFeed.getInstance();
 
@@ -22,7 +22,11 @@ class FetcgPodcast extends StatelessWidget {
           );
         } else if (!snapshot.hasData) {
           return const Center(
-            child: CircularProgressIndicator( ),
+            child: CircularProgressIndicator(),
+          );
+        } else if (snapshot.connectionState == ConnectionState.active) {
+          return const Center(
+            child: CircularProgressIndicator(),
           );
         } else {
           final RssFeed? rssFeed = snapshot.data;

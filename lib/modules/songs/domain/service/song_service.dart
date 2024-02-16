@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:amazonmusiclone/settings/constants/config.dart';
 import 'package:amazonmusiclone/shared/services/apiClient.dart';
 import 'package:dio/dio.dart';
-
+import 'package:get_it/get_it.dart';
 
 import '../model/song_model.dart';
 
@@ -16,10 +16,11 @@ class SongService {
   }
 
   Future<List<Song>> getSongs(String singerName) async {
+    // ignore: no_leading_underscores_for_local_identifiers
+    final GetIt _getIt = GetIt.instance;
     final url = Constants.getURL(singerName);
-    // _getIt<ApiClient>().get(url);
 
-    Response response = await ApiClient().get(url);
+    Response response = await _getIt<ApiClient>().get(url);
     dynamic object = jsonDecode(response.data);
     List<dynamic> list = object["results"];
     // print("object is \n");

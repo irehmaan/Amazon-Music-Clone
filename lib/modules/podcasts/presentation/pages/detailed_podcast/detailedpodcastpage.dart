@@ -104,21 +104,20 @@ class DetailedPodPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(color: Colors.grey)),
                         child: ovalbox(
-                            Color: Colors.transparent,
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Icon(
-                                  Icons.favorite_outline,
-                                  size: 20,
-                                  color: Colors.grey.shade400,
-                                ),
-                                Text(
-                                  "Follow",
-                                  style: TextStyle(color: Colors.grey.shade400),
-                                )
-                              ],
-                            )),
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(
+                              Icons.favorite_outline,
+                              size: 20,
+                              color: Colors.grey.shade400,
+                            ),
+                            Text(
+                              "Follow",
+                              style: TextStyle(color: Colors.grey.shade400),
+                            )
+                          ],
+                        )),
                       ),
                       const SizedBox(
                         width: 10,

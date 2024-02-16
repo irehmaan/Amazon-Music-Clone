@@ -1,6 +1,6 @@
 import 'package:amazonmusiclone/modules/home/presentation/widgets/top_songs.dart';
 
-import 'package:amazonmusiclone/modules/podcasts/presentation/pages/home/podcast_home.dart';
+import 'package:amazonmusiclone/modules/podcasts/presentation/pages/podcast_homepage/podcast_home.dart';
 
 import 'package:amazonmusiclone/modules/singer/domain/repo/singer_service.dart';
 import 'package:amazonmusiclone/modules/trending/presentation/pages/trendingsongs.dart';
@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../components/ovalBox.dart';
-import '../../../singer/presentation/widgets/singer_view.dart';
+import '../../../singer/presentation/pages/singer_view.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -30,24 +30,20 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-      
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.black.withOpacity(0.54),
           leading: IconButton(
               onPressed: () {},
               icon: const Icon(
                 Icons.notifications,
-                color: Colors.white,
               )),
           title: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            SizedBox(
+            const SizedBox(
               height: 35,
               width: 100,
               child: ovalbox(
-                Color: Colors.black.withOpacity(0.47),
-                child: const Text(
+                child: Text(
                   "MUSIC",
                   style: TextStyle(fontSize: 13),
                 ),
@@ -61,7 +57,6 @@ class _HomeState extends State<Home> {
               width: 100,
               child: ovalbox(
                 onTap: _goToPodcats,
-                Color: Colors.black.withOpacity(0.47),
                 child: const Text(
                   "PODCAST",
                   style: TextStyle(fontSize: 13),
@@ -80,27 +75,26 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   height: 70,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Trending Playlists",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.0, vertical: 8),
+                      child: Text(
+                        "Trending Artists",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                     ),
                     SizedBox(
                       height: 29,
                       width: 95,
                       child: ovalbox(
-                        Color: Colors.grey.shade900,
-                        child: const Text(
+                        child: Text(
                           "SEE MORE",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 13),
+                              fontWeight: FontWeight.normal, fontSize: 13),
                         ),
                       ),
                     )
@@ -122,7 +116,9 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.all(15),
                     child: Text(
                       "Trending",
-                      style: TextStyle(fontSize: 25, color: Colors.white),
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
                     ),
                   ),
                 ),
@@ -135,15 +131,15 @@ class _HomeState extends State<Home> {
                       height: 280,
                       width: MediaQuery.of(context).size.width * 0.94,
                       decoration: BoxDecoration(
-                          color: Colors.black,
+                          // color: Colors.black,
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: Colors.black)),
                       child: TrendingSongView()),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 1.18,
+                  height: MediaQuery.of(context).size.height / 1.01,
                   child: const Padding(
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 6),
                     child: TopSong(),
                   ),
                 ),

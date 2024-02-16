@@ -60,12 +60,11 @@ class SuggestionsBox extends StatelessWidget {
                 style:
                     const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
                 width: 100,
                 child: ovalbox(
-                  Color: Colors.black.withOpacity(0.47),
-                  child: const Text(
+                  child: Text(
                     "See More",
                     style: TextStyle(fontSize: 13),
                   ),

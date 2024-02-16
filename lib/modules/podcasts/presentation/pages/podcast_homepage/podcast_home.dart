@@ -1,5 +1,5 @@
 import 'package:amazonmusiclone/modules/components/ovalBox.dart';
-import 'package:amazonmusiclone/modules/podcasts/presentation/pages/trend_podcastt/trending_podcast.dart';
+import 'package:amazonmusiclone/modules/podcasts/presentation/pages/trend_podcast/trending_podcast.dart';
 import 'package:flutter/material.dart';
 
 class PodcastHomepage extends StatefulWidget {
@@ -35,25 +35,23 @@ class _PodcastHomepageState extends State<PodcastHomepage> {
               ),
               Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const Text(
+                        Text(
                           "Trending Podcasts",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 95,
                         ),
                         SizedBox(
                           height: 40,
                           width: 90,
-                          child: ovalbox(
-                              Color: Colors.grey.shade900.withOpacity(0.6),
-                              child: const Text("SEE MORE")),
+                          child: ovalbox(child: Text("SEE MORE")),
                         ),
                       ],
                     ),
@@ -77,60 +75,56 @@ class _PodcastHomepageState extends State<PodcastHomepage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         width: 1,
                       ),
                       SizedBox(
                         height: 40,
                         width: 90,
                         child: ovalbox(
-                            Color: Colors.grey.shade900,
-                            child: const Text(
-                              "Sports",
-                              style: TextStyle(fontSize: 16),
-                            )),
+                            child: Text(
+                          "Sports",
+                          style: TextStyle(fontSize: 16),
+                        )),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 3,
                       ),
                       SizedBox(
                         height: 40,
                         width: 90,
                         child: ovalbox(
-                            Color: Colors.grey.shade900,
-                            child: const Text(
-                              "News",
-                              style: TextStyle(fontSize: 16),
-                            )),
+                            child: Text(
+                          "News",
+                          style: TextStyle(fontSize: 16),
+                        )),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 5,
                       ),
                       SizedBox(
                         height: 40,
                         width: 90,
                         child: ovalbox(
-                            Color: Colors.grey.shade900,
-                            child: const Text(
-                              "Comedy",
-                              style: TextStyle(fontSize: 16),
-                            )),
+                            child: Text(
+                          "Comedy",
+                          style: TextStyle(fontSize: 16),
+                        )),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 5,
                       ),
                       SizedBox(
                         height: 40,
                         width: 90,
                         child: ovalbox(
-                            Color: Colors.grey.shade900,
-                            child: const Text(
-                              "Music",
-                              style: TextStyle(fontSize: 16),
-                            )),
+                            child: Text(
+                          "Music",
+                          style: TextStyle(fontSize: 16),
+                        )),
                       )
                     ],
                   )

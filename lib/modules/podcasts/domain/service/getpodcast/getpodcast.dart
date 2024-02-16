@@ -19,8 +19,7 @@ class FetchPodcastService {
 
   Future<List<Podcast>> getPoddcast() async {
     final url = Constants.getPodcasts();
-    _getIt<ApiClient>().get(url);
-
+  
     Response response = await _getIt<ApiClient>().get(url);
     dynamic obj = jsonDecode(response.data);
     List<dynamic> list = obj["results"];

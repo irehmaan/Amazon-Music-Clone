@@ -17,7 +17,6 @@ class Podcast {
 
   @override
   String toString() {
-    // TODO: implement toString
     return "Podcast(podtrack: $podtrack, feedUrl: $feedUrl)";
   }
 }

@@ -26,6 +26,8 @@ class TrendingPodCasts extends StatelessWidget {
           return const Center(
             child: CircularProgressIndicator(),
           );
+        } else if (snapshot.connectionState == ConnectionState.active) {
+          return const Center(child: CircularProgressIndicator());
         }
         return SizedBox(
           height: 160,
@@ -40,7 +42,7 @@ class TrendingPodCasts extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              FetcgPodcast(feedUrl: podcast.feedUrl)));
+                              FetchPodcast(feedUrl: podcast.feedUrl)));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(5.0),

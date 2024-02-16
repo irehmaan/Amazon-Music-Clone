@@ -18,18 +18,19 @@ class TrenSongService {
   }
 
   Future<List<Song>> getTrendingSongs() async {
+    /*
+    The logic below is used to display random songs in trending section !Z
+    */
     int randomIndex = Random().nextInt(Constants.keywords.length);
     String randomTrending = Constants.keywords[randomIndex];
     String url = Constants.getTrend(randomTrending);
-    _getIt<ApiClient>().get(url);
-    Response response = await ApiClient().get(url);
+
+    Response response = await _getIt<ApiClient>().get(url);
+
     dynamic object = jsonDecode(response.data);
 
     List<dynamic> list = object["results"];
-    // print("object is \n");
-    // print(list);
     List<Song> song = list.map((e) => Song.SongFROMJSON(e)).toList();
-    // print(song);
     return song;
   }
 }

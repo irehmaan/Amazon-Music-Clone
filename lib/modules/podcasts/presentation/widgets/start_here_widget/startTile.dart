@@ -53,7 +53,7 @@ class StartTileWidget extends StatelessWidget {
                         width: 75,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.network(rssFeed!.image!.url!),
+                          child: Image.network(rssFeed.image!.url!),
                         )),
                   ),
                   const SizedBox(
@@ -78,7 +78,7 @@ class StartTileWidget extends StatelessWidget {
                           SizedBox(
                             width: 250,
                             child: Text(
-                              episode!.title!,
+                              episode.title!,
                               style: const TextStyle(fontSize: 15),
                               softWrap: true,
                               maxLines: 2,
@@ -100,7 +100,7 @@ class StartTileWidget extends StatelessWidget {
                             width: 8,
                           ),
                           Text(
-                            formatDuration(episode!.itunes!.duration!),
+                            formatDuration(episode.itunes!.duration!),
                             style: const TextStyle(
                                 fontStyle: FontStyle.italic,
                                 color: Colors.grey,

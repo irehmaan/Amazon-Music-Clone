@@ -1,8 +1,7 @@
 import 'dart:async';
-
-import 'package:amazonmusiclone/modules/dashboard/pages/dashboard.dart';
 import 'package:amazonmusiclone/modules/login/presentation/pages/authpage/authPage.dart';
 import 'package:flutter/material.dart';
+
 
 import '../../../settings/constants/assets_path.dart';
 

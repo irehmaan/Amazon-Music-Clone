@@ -1,32 +1,49 @@
-import 'package:amazonmusiclone/modules/songs/domain/model/song_model.dart';
-
+import 'package:amazonmusiclone/settings/themes/light_theme.dart';
+import 'package:amazonmusiclone/settings/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../player/audioPlayer Service/audioPlayer.dart';
 
 // ignore: must_be_immutable
 class MiniPlayer extends StatelessWidget {
-  bool isPlaying;
-  late Song song;
-  MiniPlayer({super.key, required this.isPlaying, required this.song});
+  const MiniPlayer({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      width: 100,
-      child: isPlaying
-          ? Row(
-              children: [
-                Container(
-                  width: 65,
-                  height: 65,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          image: NetworkImage(song.photo), fit: BoxFit.cover)),
-                )
-              ],
-            )
-          : null,
+    return Consumer<Player>(
+      builder: (BuildContext context, Player value, Widget? child) {
+        final int? currIndex = value.currentIndex;
+        return Container(
+            decoration: BoxDecoration(
+                color: context.read<ThemeProvider>().themeData == lighTheme
+                    ? Colors.grey.shade700
+                    : Colors.black,
+                borderRadius: BorderRadius.circular(2)),
+            child: Center(
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(8),
+                leading: value.currentIndex == null
+                    ? const Text("Nothing")
+                    : Image.network(value.playlist[currIndex!].photo),
+                title: value.currentIndex == null
+                    ? const Text("Nothing is playing")
+                    : Text(value.playlist[currIndex!].trackName),
+                trailing: IconButton(
+                    onPressed: () {
+                      if (value.isPlaying) {
+                        value.pauseAudio();
+                      } else {
+                        value.playAudio(value.playlist[currIndex!].songurl);
+                      }
+                    },
+                    icon: value.isPlaying
+                        ? const Icon(Icons.pause)
+                        : const Icon(Icons.play_arrow)),
+              ),
+            ));
+      },
     );
   }
 }
