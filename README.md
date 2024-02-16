@@ -1,16 +1,31 @@
-# amazonmusiclone
+# Amazon music clone
 
-A new Flutter project.
+Amazon Music Clone built using flutter.
 
-## Getting Started
+# Features
 
-This project is a starting point for a Flutter application.
+• Trending Songs
 
-A few resources to get you started if this is your first Flutter project:
+• Search Songs
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+• Podcasts 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+• Recommendations based on Genres, Activities, etc.
+
+• Login
+
+# What's under the hood
+The clone is developed while implementing various patterns and good practices such as:
+
+-> State Management via Provider.
+
+-> JSON API.
+
+-> Network calls ( get , post).
+
+-> Singleton via GetIt.
+
+-> Clean Architecture.
+
+-> OAuth via Firebase.
+
